@@ -82,6 +82,38 @@ class CloudDnsClient
         return true;
     }
 
+
+    /**
+     * Create a managed zone. Managed zone names must be unique as Cloud Storage uses a flat
+     * namespace. For more information please see
+     * [bucket name requirements](https://cloud.google.com/storage/docs/naming#requirements)
+     *
+     * Example:
+     * ```
+     * $managedZone = $cloudDns->createManagedZone('myManagedZone');
+     * ```
+     *
+     * ```
+     * // Create a bucket with logging enabled.
+     * $managedZone = $cloudDns->createManagedZone('myManagedZone');
+     * ```
+     *
+     * @see https://cloud.google.com/storage/docs/json_api/v1/buckets/insert Buckets insert API documentation.
+     *
+     * @param string $name Name of the managed zone to be created.
+     * @param array $options [optional] {
+     *     Configuration options.
+     *
+     * }
+     * @return ManagedZone
+     */
+    public function createManagedZone($name, array $options = [])
+    {
+        $response = $this->connection->createManagedZone($options + ['name' => $name, 'project' => $this->projectId]);
+        return new ManagedZone($this->connection, $name, $response);
+    }
+
+
     /**
      * Lazily instantiates a managed zone. There are no network requests made at this
      * point. To see the operations that can be performed on a managed zone please

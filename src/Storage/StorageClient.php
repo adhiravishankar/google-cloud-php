@@ -230,6 +230,7 @@ class StorageClient
      * Registers this StorageClient as the handler for stream reading/writing.
      *
      * @param string $protocol The name of the protocol to use. **Defaults to** `gs`.
+     * @return bool
      * @throws \RuntimeException
      */
     public function registerStreamWrapper($protocol = null)

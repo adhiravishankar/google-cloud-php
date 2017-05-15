@@ -20,6 +20,7 @@ namespace Google\Cloud\Vision;
 use Google\Cloud\Core\ClientTrait;
 use Google\Cloud\Core\ValidateTrait;
 use Google\Cloud\Storage\StorageObject;
+use Google\Cloud\Vision\Connection\ConnectionInterface;
 use Google\Cloud\Vision\Connection\Rest;
 use InvalidArgumentException;
 use Psr\Cache\CacheItemPoolInterface;

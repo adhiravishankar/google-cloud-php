@@ -33,7 +33,7 @@ interface ConnectionInterface
     /**
      * @param array $args
      */
-    public function createManagedZones(array $args = []);
+    public function createManagedZone(array $args = []);
 
     /**
      * @param array $args

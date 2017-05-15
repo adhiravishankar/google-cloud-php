@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: adhi
- * Date: 1/2/17
- * Time: 12:49 PM
- */
 
 namespace Google\Cloud\CloudDns\Connection;
 
@@ -64,7 +58,7 @@ class Rest implements ConnectionInterface
      * @param array $args
      * @return array
      */
-    public function createManagedZones(array $args = [])
+    public function createManagedZone(array $args = [])
     {
         return $this->send('managedZones', 'create', $args);
     }
