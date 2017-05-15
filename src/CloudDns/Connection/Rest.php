@@ -8,11 +8,10 @@
 
 namespace Google\Cloud\CloudDns\Connection;
 
-
-use Google\Cloud\RequestBuilder;
-use Google\Cloud\RequestWrapper;
-use Google\Cloud\RestTrait;
-use Google\Cloud\UriTrait;
+use Google\Cloud\Core\RequestBuilder;
+use Google\Cloud\Core\RequestWrapper;
+use Google\Cloud\Core\RestTrait;
+use Google\Cloud\Core\UriTrait;
 
 class Rest implements ConnectionInterface
 {
@@ -36,6 +35,7 @@ class Rest implements ConnectionInterface
 
     /**
      * @param array $args
+     * @return array
      */
     public function createChanges(array $args = [])
     {
@@ -44,6 +44,7 @@ class Rest implements ConnectionInterface
 
     /**
      * @param array $args
+     * @return array
      */
     public function getChanges(array $args = [])
     {
@@ -52,6 +53,7 @@ class Rest implements ConnectionInterface
 
     /**
      * @param array $args
+     * @return array
      */
     public function listChanges(array $args = [])
     {
@@ -60,6 +62,7 @@ class Rest implements ConnectionInterface
 
     /**
      * @param array $args
+     * @return array
      */
     public function createManagedZones(array $args = [])
     {
@@ -68,6 +71,7 @@ class Rest implements ConnectionInterface
 
     /**
      * @param array $args
+     * @return array
      */
     public function deleteManagedZones(array $args = [])
     {
@@ -76,6 +80,7 @@ class Rest implements ConnectionInterface
 
     /**
      * @param array $args
+     * @return array
      */
     public function getManagedZones(array $args = [])
     {
@@ -84,6 +89,7 @@ class Rest implements ConnectionInterface
 
     /**
      * @param array $args
+     * @return array
      */
     public function listManagedZones(array $args = [])
     {
@@ -92,17 +98,20 @@ class Rest implements ConnectionInterface
 
     /**
      * @param array $args
+     * @return array
      */
-    public function getProjects(array $args = [])
+    public function getProject(array $args = [])
     {
         return $this->send('projects', 'get', $args);
     }
 
     /**
      * @param array $args
+     * @return array
      */
     public function getResourceRecordSets(array $args = [])
     {
         return $this->send('resourceRecordSets', 'list', $args);
     }
+
 }

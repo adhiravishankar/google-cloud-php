@@ -2,10 +2,10 @@
 
 namespace Google\Cloud\CloudDns;
 
-use Google\Cloud\ClientTrait;
 use Google\Cloud\CloudDns\Connection\ConnectionInterface;
 use Google\Cloud\CloudDns\Connection\Rest;
-use Google\Cloud\Exception\NotFoundException;
+use Google\Cloud\Core\ClientTrait;
+use Google\Cloud\Core\Exception\NotFoundException;
 use Psr\Cache\CacheItemPoolInterface;
 
 class CloudDnsClient
